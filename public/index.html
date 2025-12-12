@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parallel Lives - AI Life Path Explorer</title>
+  <meta name="description" content="Explore the paths not taken in your life with AI-guided what-if scenarios">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Background elements -->
+    <div class="bg-gradient"></div>
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+    <div class="bg-orb bg-orb-3"></div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 3L2 12h3v9h6v-6h2v6h6v-9h3L12 3z" opacity="0.3"/>
+            <path d="M12 3v18M5 12h14" stroke-dasharray="2 2"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <h1>Parallel Lives</h1>
+          <span class="tagline">Explore the paths not taken</span>
+        </div>
+      </div>
+      <div class="connection-status" id="connectionStatus">
+        <span class="status-dot"></span>
+        <span class="status-text">Connecting...</span>
+      </div>
+    </header>
+
+    <!-- Chat Container -->
+    <main class="chat-container">
+      <div class="messages" id="messages">
+        <!-- Messages will be inserted here -->
+        <div class="welcome-message">
+          <div class="welcome-icon">✨</div>
+          <h2>Welcome to Parallel Lives</h2>
+          <p>Share a pivotal life decision you've made, and I'll help you explore what might have been.</p>
+          <div class="example-prompts">
+            <button class="example-btn" data-prompt="I chose to become a software engineer instead of pursuing my dream of being a musician">
+              💻 Career vs. passion
+            </button>
+            <button class="example-btn" data-prompt="I decided to stay in my hometown instead of moving to a big city">
+              🏠 Stay vs. move away
+            </button>
+            <button class="example-btn" data-prompt="I said no to that job offer abroad because of my relationship">
+              ✈️ Love vs. adventure
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Typing Indicator -->
+      <div class="typing-indicator" id="typingIndicator">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </main>
+
+    <!-- Input Area -->
+    <footer class="input-area">
+      <form id="messageForm" class="message-form">
+        <div class="input-wrapper">
+          <textarea 
+            id="messageInput" 
+            placeholder="Share a life decision or ask 'what if'..."
+            rows="1"
+            maxlength="2000"
+          ></textarea>
+          <button type="submit" id="sendButton" disabled>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 2L11 13M22 2L15 22L11 13L2 9L22 2Z"/>
+            </svg>
+          </button>
+        </div>
+        <p class="input-hint">Press Enter to send, Shift+Enter for new line</p>
+      </form>
+    </footer>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
