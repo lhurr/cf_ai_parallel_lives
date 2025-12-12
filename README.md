@@ -55,7 +55,7 @@ Share a pivotal life decision you've made, and the AI generates vivid narratives
 ### 1. Install Dependencies
 
 ```bash
-cd cf-assignment
+cd cf_ai_parallel_lives
 npm install
 ```
 
@@ -87,7 +87,7 @@ Open **http://localhost:8787** in your browser.
 ## Project Structure
 
 ```
-cf-assignment/
+cf_ai_parallel_lives/
 ├── wrangler.toml           # Cloudflare configuration
 ├── package.json            # Dependencies
 ├── tsconfig.json           # TypeScript config
