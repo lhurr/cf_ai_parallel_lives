@@ -94,8 +94,7 @@ async function handleWebSocket(request: Request, env: Env): Promise<Response> {
                 const conversationContext = await userMemory.getConversationContext();
                 const contextPrompt = buildContextPrompt(lifeSummary, recentDecisions, conversationContext);
 
-                // Generate AI response using Llama 3.3
-                const response = await env.AI.run("@cf/meta/llama-3.3-70b-instruct-fp8-fast", {
+                const response = await env.AI.run("@cf/mistral/mistral-small-3.1-24b-instruct", {
                     messages: [
                         { role: "system", content: SYSTEM_PROMPT + contextPrompt },
                         { role: "user", content: data.content },
@@ -186,7 +185,7 @@ async function updateLifeSummary(
             ? `Current summary: ${currentSummary}\n\nBased on this new conversation, update the summary:\n${conversationContext}\n\n${SUMMARY_PROMPT}`
             : `${conversationContext}\n\n${SUMMARY_PROMPT}`;
 
-        const response = await env.AI.run("@cf/meta/llama-3.3-70b-instruct-fp8-fast", {
+        const response = await env.AI.run("@cf/mistral/mistral-small-3.1-24b-instruct", {
             messages: [
                 { role: "system", content: "You are creating a brief summary of someone's life story based on their conversations. Be concise and focus on key life decisions and details." },
                 { role: "user", content: prompt },
